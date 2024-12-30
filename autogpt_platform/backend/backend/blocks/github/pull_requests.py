@@ -548,7 +548,7 @@ class GithubCreateRepositoryBlock(Block):
 
     def __init__(self):
         super().__init__(
-            id="d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+            id="029ec3b8-1cfd-46d3-b6aa-28e4a706efd1",
             description="This block creates a new GitHub repository.",
             categories={BlockCategory.DEVELOPER_TOOLS},
             input_schema=GithubCreateRepositoryBlock.Input,
