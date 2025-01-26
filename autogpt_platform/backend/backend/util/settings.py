@@ -153,6 +153,11 @@ class Config(UpdateTrackingModel["Config"], BaseSettings):
         description="The name of the Google Cloud Storage bucket for media files",
     )
 
+    scheduler_db_pool_size: int = Field(
+        default=3,
+        description="The pool size for the scheduler database connection pool",
+    )
+
     @field_validator("platform_base_url", "frontend_base_url")
     @classmethod
     def validate_platform_base_url(cls, v: str, info: ValidationInfo) -> str:
@@ -259,6 +264,10 @@ class Secrets(UpdateTrackingModel["Secrets"], BaseSettings):
     notion_client_secret: str = Field(
         default="", description="Notion OAuth client secret"
     )
+    twitter_client_id: str = Field(default="", description="Twitter/X OAuth client ID")
+    twitter_client_secret: str = Field(
+        default="", description="Twitter/X OAuth client secret"
+    )
 
     openai_api_key: str = Field(default="", description="OpenAI API key")
     anthropic_api_key: str = Field(default="", description="Anthropic API key")
@@ -295,7 +304,10 @@ class Secrets(UpdateTrackingModel["Secrets"], BaseSettings):
     jina_api_key: str = Field(default="", description="Jina API Key")
     unreal_speech_api_key: str = Field(default="", description="Unreal Speech API Key")
 
-    fal_key: str = Field(default="", description="FAL API key")
+    fal_api_key: str = Field(default="", description="FAL API key")
+    exa_api_key: str = Field(default="", description="Exa API key")
+    e2b_api_key: str = Field(default="", description="E2B API key")
+    nvidia_api_key: str = Field(default="", description="Nvidia API key")
 
     # Add more secret fields as needed
 
